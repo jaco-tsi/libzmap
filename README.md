@@ -1,5 +1,5 @@
-python-libzmap
-==============
+libzmap-python3
+===============
 
 ZMap is an open-source network scanner that enables researchers to easily perform Internet-wide network studies. 
 python-libzmap is a zmap-python binding, with full scan option support(tcp_synscan, icmp_echoscan, icmp_echo_time, udp, ntp, upnp)
@@ -14,13 +14,18 @@ Install
 --------
 
 ```bash
-git clone https://github.com/gushitong/python-libzmap
+git clone git@github.com:d00t-b-res/libzmap-python3.git
 ```
 
 ```bash
-cd python-libzmap && python setup.py install
+cd libzmap-python3 && python3 setup.py install
 ```
 
+or
+
+```bash
+sudo pip3.6 install git+https://github.com/d00t-b-res/libzmap-python3
+```
 
 Use case
 -------
@@ -30,7 +35,7 @@ Use case
 >>> 
 >>> proc = ZmapProcess(targets='101.200.188.97/20', options='-B 100M', probe_module='icmp_echoscan')
 >>> for obj in proc.run():
-...     print obj
+...     print(obj)
 ... 
 {'daddr': '172.30.8.34', 'code': '0', 'timestamp_ts': '1524630534', 'classification': 'echoreply', 'seq': '0', 'timestamp_us': '196136\n', 'saddr': '101.200.178.99', 'success': '1', 'icmp_id': '50011', 'saddr_raw': '1672661093', 'repeat': '0', 'ttl': '52', 'ipid': '20469', 'daddr_raw': '570957484', 'type': '0', 'cooldown': '1', 'timestamp_str': '2018-04-25T12:28:54.196+0800'}
 {'daddr': '172.30.8.34', 'code': '0', 'timestamp_ts': '1524630534', 'classification': 'echoreply', 'seq': '0', 'timestamp_us': '196183\n', 'saddr': '101.200.176.161', 'success': '1', 'icmp_id': '25116', 'saddr_raw': '2712717413', 'repeat': '0', 'ttl': '52', 'ipid': '38111', 'daddr_raw': '570957484', 'type': '0', 'cooldown': '1', 'timestamp_str': '2018-04-25T12:28:54.196+0800'}
@@ -54,7 +59,7 @@ Python Support
 
 The libzmap code is tested against the following python interpreters:
 
-- Python 2.7 (Test on ubuntu-15.10 with zmap-2.1.0);
+- Python 3.6 (Test on ubuntu-18.04 with zmap-2.1.1);
 
 
 About me

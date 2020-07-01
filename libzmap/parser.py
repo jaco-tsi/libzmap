@@ -38,6 +38,8 @@ class ZmapParser(object):
             return Udp
         elif self.probe_module_name == 'upnp':
             return Upnp
+        elif self.probe_module_name == 'dns':
+            return Dns
         else:
             raise RuntimeError(1, 'Unsupported zmap probe module %s' % self.probe_module_name)
 
